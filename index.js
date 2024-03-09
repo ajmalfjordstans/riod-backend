@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://rnd.riod.co.uk/'],
+    origin: ['http://localhost:3000', 'https://rnd.riod.co.uk'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowHeaders: ['Content-Type'],
     optionsSuccessStatus: 204,
