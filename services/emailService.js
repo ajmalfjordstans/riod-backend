@@ -35,6 +35,38 @@ export function contactForm(formData, subject) {
   });
 }
 
+export function contactFormSConcierge(formData, subject) {
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.SCONCIERGE_EMAIL,
+      pass: process.env.SCONCIERGE_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: process.env.SCONCIERGE_EMAIL,
+    to: process.env.SCONCIERGE_EMAIL,
+    subject: subject,
+    html: `
+    <div style="font-family: Arial, sans-serif; padding: 20px;">
+      <h2>Contact Form Submission</h2>
+      <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+      <p><strong>Email:</strong> ${formData.email}</p>
+      <p><strong>Message:</strong> ${formData.message}</p>
+    </div>
+    `,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+}
+
 export function subscription(formData) {
   const transporter = nodemailer.createTransport({
     host: 'smtp.zoho.in',
