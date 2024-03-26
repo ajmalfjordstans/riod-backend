@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import cors from 'cors'
 
 import dotenv from 'dotenv';
-import { contactForm, contactFormSConcierge, subscription } from "./services/emailService.js";
+import { contactForm, contactFormConfirmationSConcierge, contactFormSConcierge, subscription } from "./services/emailService.js";
 
 dotenv.config();
 
@@ -35,6 +35,8 @@ app.post("/contact-us-sconcierge", (req, res) => {
     const formData = req.body;
     // Send email to admin
     contactFormSConcierge(formData, "New Enquiry")
+    // Send Confirmation mail
+    contactFormConfirmationSConcierge(formData)
     res.status(201).send(formData);
   } catch (error) {
     return res.status(500).send({ message: error.message })
