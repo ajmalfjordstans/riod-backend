@@ -87,6 +87,25 @@ export function contactFormConfirmationSConcierge(formData) {
       <h2> One of our agent will contact you shortly</h2>
       <p>Team Signature Concierge,</p>
     </div>
+    <div style="max-width: 600px; margin: 0 auto; padding: 20px; "font-family: Arial, sans-serif;">
+        <h2>Thank You for Contacting Us!</h2>
+        <p>Dear ${formData.firstName + " " + formData.lastName},</p>
+        
+        <p>We have received your message and will get back to you as soon as possible.</p>
+        
+        <p><strong>Here are the details you submitted:</strong></p>
+        
+        <ul>
+            <li><strong>Name:</strong> ${formData.firstName + " " + formData.lastName}</li>
+            <li><strong>Email:</strong> ${formData.email}</li>
+            <li><strong>Message:</strong> ${formData.message}</li>
+        </ul>
+        
+        <p>If you have any further questions or concerns, feel free to reach out to us.</p>
+        
+        <p>Best Regards,<br>
+        Team Signature Concierge</p>
+    </div>
     `,
   };
 
