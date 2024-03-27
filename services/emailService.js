@@ -82,11 +82,6 @@ export function contactFormConfirmationSConcierge(formData) {
     to: formData.email,
     subject: 'Enquiry Received',
     html: `
-    <div style="font-family: Arial, sans-serif; padding: 20px;">
-      <h2>Thank you for your enquiry to Signature Concierge about ${formData.subject},</h2>
-      <h2> One of our agent will contact you shortly</h2>
-      <p>Team Signature Concierge,</p>
-    </div>
     <div style="max-width: 600px; margin: 0 auto; padding: 20px; "font-family: Arial, sans-serif;">
         <h2>Thank You for Contacting Us!</h2>
         <p>Dear ${formData.firstName + " " + formData.lastName},</p>
