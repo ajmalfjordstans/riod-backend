@@ -52,6 +52,9 @@ export function enquirySConcierge(formData, subject) {
     html: `
     <div style="font-family: Arial, sans-serif; padding: 20px;">
       <h2>Signature Concierge Enquiry Form Submission</h2>
+      <p><strong>Name:</strong> ${formData.name}</p>
+      <p><strong>Email:</strong> ${formData.email}</p>
+      <p><strong>Contact:</strong> ${formData.contact}</p>
       <p><strong>Service Type:</strong> ${formData.serviceType}</p>
       <p><strong>Pickup:</strong> ${formData.pickupLocation}</p>
       <p><strong>DropOff:</strong> ${formData.dropOffLocation}</p>
@@ -72,6 +75,7 @@ export function enquirySConcierge(formData, subject) {
     }
   });
 }
+
 export function contactFormSConcierge(formData, subject) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
