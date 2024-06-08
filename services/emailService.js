@@ -46,7 +46,7 @@ export function enquirySConcierge(formData, subject) {
 
   const mailOptions = {
     from: process.env.SCONCIERGE_EMAIL,
-    to: process.env.SCONCIERGE_EMAIL,
+    to: process.env.SCONCIERGE_TO_EMAIL,
     // to: "frontend.fjordstans@gmail.com",
     subject: "Signature Concierge Enquiry Form Submission",
     html: `
@@ -83,7 +83,7 @@ export function contactFormSConcierge(formData, subject) {
 
   const mailOptions = {
     from: process.env.SCONCIERGE_EMAIL,
-    to: process.env.SCONCIERGE_EMAIL,
+    to: process.env.SCONCIERGE_TO_EMAIL,
     subject: subject + ":" + formData.subject,
     html: `
     <div style="font-family: Arial, sans-serif; padding: 20px;">
