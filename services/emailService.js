@@ -63,6 +63,7 @@ export function enquirySConcierge(formData, subject) {
       <p><strong>NumOfPassengers:</strong> ${formData.numOfPassengers}</p>
       <p><strong>NumOfLuggage:</strong> ${formData.numOfLuggage}</p>
       <p><strong>Message:</strong> ${formData.message}</p>
+      <p><strong>Receive News:</strong> ${formData.subscribeNewsletter}</p>
     </div>
     `,
   };
