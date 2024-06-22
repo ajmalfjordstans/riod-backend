@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://rnd.riod.co.uk','https://signature-concierge.co.uk','https://www.signature-concierge.co.uk','https://sconcierge.vercel.app/'],
+    origin: ['http://localhost:3000', 'https://rnd.riod.co.uk', 'https://signature-concierge.co.uk', 'https://www.signature-concierge.co.uk', 'https://sconcierge.vercel.app/', 'https://ridewing-tours.vercel.app/'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowHeaders: ['Content-Type'],
     optionsSuccessStatus: 204,

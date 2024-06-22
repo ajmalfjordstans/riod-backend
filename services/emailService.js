@@ -48,22 +48,28 @@ export function enquirySConcierge(formData, subject) {
     from: process.env.SCONCIERGE_EMAIL,
     to: process.env.SCONCIERGE_TO_EMAIL,
     // to: "frontend.fjordstans@gmail.com",
-    subject: "Signature Concierge Enquiry Form Submission",
+    subject: "Enquiry Form Submission",
     html: `
     <div style="font-family: Arial, sans-serif; padding: 20px;">
       <h2>Signature Concierge Enquiry Form Submission</h2>
       <p><strong>Name:</strong> ${formData.name}</p>
       <p><strong>Email:</strong> ${formData.email}</p>
       <p><strong>Contact:</strong> ${formData.contact}</p>
-      <p><strong>Service Type:</strong> ${formData.serviceType}</p>
-      <p><strong>Pickup:</strong> ${formData.pickupLocation}</p>
-      <p><strong>DropOff:</strong> ${formData.dropOffLocation}</p>
-      <p><strong>Date:</strong> ${formData.date}</p>
-      <p><strong>Tme:</strong> ${formData.time}</p>
+      ${formData.serviceType &&
+      <>
+        <p><strong>Service Type:</strong> ${formData.serviceType}</p>
+        <p><strong>Pickup:</strong> ${formData.pickupLocation}</p>
+        <p><strong>DropOff:</strong> ${formData.dropOffLocation}</p>
+        <p><strong>Date:</strong> ${formData.date}</p>
+        <p><strong>Tme:</strong> ${formData.time}</p>
+      </>
+      }
       <p><strong>NumOfPassengers:</strong> ${formData.numOfPassengers}</p>
       <p><strong>NumOfLuggage:</strong> ${formData.numOfLuggage}</p>
       <p><strong>Message:</strong> ${formData.message}</p>
+      ${formData.subscribeNewsletter &&
       <p><strong>Receive News:</strong> ${formData.subscribeNewsletter}</p>
+      }
     </div>
     `,
   };
